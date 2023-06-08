@@ -1,0 +1,13 @@
+@use 'src/base-styles/functions';
+
+.app {
+  min-height: 100vh;
+
+  .app-content {
+    padding: functions.gaps(4, 4, 0);
+
+    > .content-section + .content-section {
+      margin-top: functions.gap(3);
+    }
+  }
+}

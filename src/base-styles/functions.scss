@@ -1,0 +1,15 @@
+@use 'variables';
+
+@function gap($number: 1) {
+  @return $number * variables.$gap;
+}
+
+@function gaps($firstNumber: 1, $restNumbers...) {
+  $result: gap($firstNumber);
+
+  @each $number in $restNumbers {
+    $result: $result gap($number)
+  }
+
+  @return $result;
+}
