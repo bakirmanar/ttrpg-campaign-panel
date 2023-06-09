@@ -18,8 +18,8 @@ const PCS: CharacterDataModel[] = [
     tags: ['tiefling', 'fighter', 'verden', 'westrock']
   },
   {
-    id: 'laraisul',
-    name: 'Лараисул',
+    id: 'lairasul',
+    name: 'Лаирасул',
     race: 'elf',
     description: 'Разбойник из Вестрока.',
     tags: ['elf', 'rogue', 'verden', 'westrock']
@@ -29,13 +29,13 @@ const PCS: CharacterDataModel[] = [
     name: 'Джейми',
     race: 'half-elf',
     description: 'Чернокнижник из Дэйла.',
-    tags: ['half_elf', 'warlock', 'eden', 'dale']
+    tags: ['half_elf', 'warlock', 'edena', 'dale']
   },
   {
     id: 'kadrick',
     name: 'Кадрик',
     race: 'dwarf',
-    description: 'Дворф-паладин из Орзаммара.',
+    description: 'Паладин из Орзаммара.',
     tags: ['dwarf', 'paladin', 'orzammar', 'orzammar_city', 'primordial_flame_church']
   }
 ]

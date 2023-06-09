@@ -134,8 +134,8 @@ const TAGS: TagSM[] = [
     type: 'place'
   },
   {
-    id: 'eden',
-    name: 'Эден',
+    id: 'edena',
+    name: 'Эдена',
     type: 'place'
   },
   {
