@@ -1,7 +1,7 @@
-import CharacterData from '../models/character-data'
+import CharacterDataModel from '../models/character-data.model'
 import BrockImage from '../assets/images/Brock.png'
 
-const PCS: CharacterData[] = [
+const PCS: CharacterDataModel[] = [
   {
     id: 'brock',
     name: 'Брок',

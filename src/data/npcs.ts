@@ -1,6 +1,6 @@
-import CharacterData from '../models/character-data'
+import CharacterDataModel from '../models/character-data.model'
 
-const NPCS: CharacterData[] = [
+const NPCS: CharacterDataModel[] = [
   {
     id: 'tinker',
     name: 'Тинкер',

@@ -1,4 +1,4 @@
-import { TagVm } from './tag'
+import { TagVM } from './tag.model'
 
 export type DataBM = {
   id: string,
@@ -15,5 +15,5 @@ export type DataVM = {
   type?: 'PC' | 'NPC' | 'Place',
   image?: string,
   description?: string,
-  tags?: TagVm[]
+  tags?: TagVM[]
 }

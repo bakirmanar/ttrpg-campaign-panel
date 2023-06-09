@@ -1,8 +1,8 @@
 import NPCS from '../data/npcs'
 import PCS from '../data/pcs'
-import TAGS, { TAGS_COLORS } from '../data/tags'
-import { TagVm } from '../models/tag'
-import { DataBM, DataVM } from '../models/data'
+import { TagVM } from '../models/tag.model'
+import { DataBM, DataVM } from '../models/data.model'
+import TagsService from './tags.service'
 
 export type ContentBlock = {
   key: string,
@@ -11,12 +11,12 @@ export type ContentBlock = {
 }
 
 export default class DataService {
-  private static pcs: ContentBlock = {
+  private static readonly PCS: ContentBlock = {
     key: 'pcs',
     title: 'Главные персонажи',
     data: this.dataBMToDataVM(PCS),
   }
-  private static npcs: ContentBlock = {
+  private static readonly NPCS: ContentBlock = {
     key: 'npcs',
     title: 'NPC',
     data: this.dataBMToDataVM(NPCS),
@@ -24,24 +24,23 @@ export default class DataService {
 
   private static dataBMToDataVM(data: DataBM[]): DataVM[] {
     return data.map((d) => {
+      let tags = d.tags
+          ?.map((dTag) => TagsService.TAGS.find((t) => t.id === dTag))
+          // Filter out empty values
+          .filter((tag) => tag) as TagVM[]
+        || [];
+
       return {
         ...d,
-        tags: d.tags?.map((dTag) => {
-          const result = TAGS.find((t) => t.id === dTag);
-
-          return {
-            ...result,
-            color: result?.type ? TAGS_COLORS[result?.type] : undefined
-          } as TagVm
-        })
+        tags,
       } satisfies DataVM
     })
   }
 
   public static getAllBlocks() {
     return [
-      this.pcs,
-      this.npcs,
+      this.PCS,
+      this.NPCS,
     ]
   }
 

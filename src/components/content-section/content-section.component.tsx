@@ -2,7 +2,7 @@ import React from 'react'
 import { Card } from 'antd'
 import Title from 'antd/lib/typography/Title'
 import PC from '../pc/pc.component'
-import { DataVM } from '../../models/data'
+import { DataVM } from '../../models/data.model'
 
 import './content-section.scss';
 

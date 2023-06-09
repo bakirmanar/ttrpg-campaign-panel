@@ -1,9 +1,9 @@
-export type TagBm = {
+export type TagSM = {
   id: string,
   name: string,
   type?: string
 }
 
-export type TagVm = TagBm & {
+export type TagVM = TagSM & {
   color?: string,
 }

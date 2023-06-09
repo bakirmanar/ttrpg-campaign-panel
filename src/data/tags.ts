@@ -1,4 +1,4 @@
-import { TagBm } from '../models/tag'
+import { TagSM } from '../models/tag.model'
 
 export const TAGS_COLORS: { [key: string]: string } = {
   race: 'red',
@@ -7,7 +7,7 @@ export const TAGS_COLORS: { [key: string]: string } = {
   fraction: 'purple',
 }
 
-const TAGS: TagBm[] = [
+const TAGS: TagSM[] = [
   // region Races
   {
     id: 'dwarf',

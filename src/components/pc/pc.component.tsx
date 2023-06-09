@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar, Col, Row, Tag } from 'antd'
 import Title from 'antd/lib/typography/Title'
-import { DataVM } from '../../models/data'
+import { DataVM } from '../../models/data.model'
 
 import './pc.scss'
 
