@@ -21,7 +21,7 @@ const PCS: CharacterDataModel[] = [
     id: 'lairasul',
     name: 'Лаирасул',
     race: 'elf',
-    description: 'Разбойник из Вестрока.',
+    description: 'Плут из Вестрока.',
     tags: ['elf', 'rogue', 'verden', 'westrock']
   },
   {
