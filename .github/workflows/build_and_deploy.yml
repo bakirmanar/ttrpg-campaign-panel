@@ -20,5 +20,7 @@ jobs:
     steps:
     - id: build-publish
       uses: bitovi/github-actions-react-to-ghp@v1.2.0
+      env:
+         CI: ""
       with:
         path: build # change to your build folder
