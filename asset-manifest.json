@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/ttrpg-campaing-panel/static/css/main.a59b4bd3.css",
+    "main.css": "/ttrpg-campaing-panel/static/css/main.16cfc82c.css",
     "main.js": "/ttrpg-campaing-panel/static/js/main.32263a52.js",
     "static/js/787.f71bfc98.chunk.js": "/ttrpg-campaing-panel/static/js/787.f71bfc98.chunk.js",
     "static/media/Brock.png": "/ttrpg-campaing-panel/static/media/Brock.57e5c0fc1519fab2234d.png",
     "index.html": "/ttrpg-campaing-panel/index.html",
-    "main.a59b4bd3.css.map": "/ttrpg-campaing-panel/static/css/main.a59b4bd3.css.map",
+    "main.16cfc82c.css.map": "/ttrpg-campaing-panel/static/css/main.16cfc82c.css.map",
     "main.32263a52.js.map": "/ttrpg-campaing-panel/static/js/main.32263a52.js.map",
     "787.f71bfc98.chunk.js.map": "/ttrpg-campaing-panel/static/js/787.f71bfc98.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a59b4bd3.css",
+    "static/css/main.16cfc82c.css",
     "static/js/main.32263a52.js"
   ]
 }
