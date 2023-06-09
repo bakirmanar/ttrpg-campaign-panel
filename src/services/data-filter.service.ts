@@ -1,7 +1,5 @@
 import { ContentBlock } from './data.service'
 import Filters from '../models/data-filter.model'
-import { TagVM } from '../models/tag.model'
-
 
 export default class DataFilterService {
   public static filterContent(content: ContentBlock[], filters: Filters): ContentBlock[] {

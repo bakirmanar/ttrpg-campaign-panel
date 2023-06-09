@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import _ from 'lodash'
-import { Form, Input, Row, Select } from 'antd'
+import { Form, Input, Select } from 'antd'
 import ContentSection from '../../components/content-section/content-section.component'
 import DataService, { ContentBlock } from '../../services/data.service'
 import TagsService from '../../services/tags.service'
@@ -10,16 +10,16 @@ import DataFilterService from '../../services/data-filter.service'
 import './main.scss'
 
 export default function MainPage() {
-  const filters = useRef<Filters>({});
-  const [dataToDisplay, setDataToDisplay] = useState<ContentBlock[]>([]);
+  const filters = useRef<Filters>({})
+  const [dataToDisplay, setDataToDisplay] = useState<ContentBlock[]>([])
 
   // on init
   useEffect(() => {
-    resetData();
+    resetData()
   }, [])
 
   const resetData = () => {
-    setDataToDisplay([...DataService.getAllBlocks()]);
+    setDataToDisplay([...DataService.getAllBlocks()])
   }
 
   const updateFilters = (key: keyof Filters, value: any) => {
@@ -37,9 +37,9 @@ export default function MainPage() {
   // on destroy
   useEffect(() => {
     return () => {
-      debouncedSearch.cancel();
+      debouncedSearch.cancel()
     }
-  }, []);
+  }, [])
 
   return (
     <>
