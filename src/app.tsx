@@ -12,7 +12,7 @@ function App() {
         <MainPage />
       </Content>
     </Layout>
-  );
+  )
 }
 
-export default App;
+export default App
