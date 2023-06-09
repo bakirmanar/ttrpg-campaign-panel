@@ -1,5 +1,5 @@
-import CharacterDataModel from '../models/character-data.model'
-import BrockImage from '../assets/images/Brock.png'
+import CharacterDataModel from '../src/models/character-data.model'
+import BrockImage from '../src/assets/images/Brock.png'
 
 const PCS: CharacterDataModel[] = [
   {

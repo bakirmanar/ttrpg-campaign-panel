@@ -1,4 +1,4 @@
-import { TagSM } from '../models/tag.model'
+import { TagSM } from '../src/models/tag.model'
 
 export const TAGS_COLORS: { [key: string]: string } = {
   race: 'red',

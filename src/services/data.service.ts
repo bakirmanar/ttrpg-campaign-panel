@@ -1,5 +1,5 @@
-import NPCS from '../data/npcs'
-import PCS from '../data/pcs'
+import NPCS from '../../data/npcs'
+import PCS from '../../data/pcs'
 import { TagVM } from '../models/tag.model'
 import { DataBM, DataVM } from '../models/data.model'
 import TagsService from './tags.service'

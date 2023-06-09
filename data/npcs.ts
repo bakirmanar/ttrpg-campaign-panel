@@ -1,4 +1,4 @@
-import CharacterDataModel from '../models/character-data.model'
+import CharacterDataModel from '../src/models/character-data.model'
 
 const NPCS: CharacterDataModel[] = [
   {
