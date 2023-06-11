@@ -1,16 +1,14 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import _ from 'lodash'
-import { Form, Input, Select } from 'antd'
 import ContentSection from '../../components/content-section/content-section.component'
 import DataService, { ContentBlock } from '../../services/data.service'
-import TagsService from '../../services/tags.service'
 import Filters from '../../models/data-filter.model'
 import DataFilterService from '../../services/data-filter.service'
+import DataFilters from '../../components/data-filters/data-filters.component'
 
 import './main.scss'
 
 export default function MainPage() {
-  const filters = useRef<Filters>({})
   const [dataToDisplay, setDataToDisplay] = useState<ContentBlock[]>([])
 
   // on init
@@ -22,15 +20,9 @@ export default function MainPage() {
     setDataToDisplay([...DataService.getAllBlocks()])
   }
 
-  const updateFilters = (key: keyof Filters, value: any) => {
-    filters.current[key] = value
-    debouncedSearch()
-  }
-
   const debouncedSearch = useMemo(
-    () => _.debounce(() => {
-      console.log(filters.current)
-      setDataToDisplay([...DataFilterService.filterContent(DataService.getAllBlocks(), filters.current)])
+    () => _.debounce((filters: Filters) => {
+      setDataToDisplay([...DataFilterService.filterContent(DataService.getAllBlocks(), filters)])
     }, 300)
   , [])
 
@@ -43,16 +35,8 @@ export default function MainPage() {
 
   return (
     <>
-      <Form className="page-search">
-        <Form.Item>
-          <Input type="text" onChange={(e) => updateFilters('qry', e.target.value)}
-                 placeholder="Поиск" allowClear={true} />
-        </Form.Item>
-        <Form.Item>
-          <Select mode="tags" onChange={(e) => updateFilters('tags', e)} fieldNames={{ label: 'name', value: 'id'}}
-                  options={TagsService.TAGS} placeholder="Тэги" allowClear={true}></Select>
-        </Form.Item>
-      </Form>
+      <DataFilters onChange={debouncedSearch} onReset={resetData} />
+
       {dataToDisplay.map((dt) => (
         dt?.data?.length ? <ContentSection key={dt.key} title={dt.title} data={dt.data} /> : null
       ))}

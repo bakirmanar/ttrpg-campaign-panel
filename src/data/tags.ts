@@ -2,13 +2,12 @@ import { TagSM } from '../models/tag.model'
 
 export const TAGS_COLORS: { [key: string]: string } = {
   race: 'red',
-  proficiency: 'orange',
-  place: 'blue',
-  fraction: 'purple',
+  proficiency: 'magenta',
+  location: 'purple',
+  fraction: 'geekblue',
 }
 
-const TAGS: TagSM[] = [
-  // region Races
+export const RACES_TAGS: TagSM[] = [
   {
     id: 'dwarf',
     name: 'Дварф',
@@ -54,8 +53,9 @@ const TAGS: TagSM[] = [
     name: 'Эльф',
     type: 'race'
   },
-  // endregion
-  // region Proficiencies
+]
+
+export const PROFICIENCIES_TAGS: TagSM[] = [
   {
     id: 'druid',
     name: 'Друид',
@@ -96,55 +96,57 @@ const TAGS: TagSM[] = [
     name: 'Паладин',
     type: 'proficiency'
   },
-  // endregion
-  // region Places
+]
+
+export const LOCATIONS_TAGS: TagSM[] = [
   {
     id: 'kir_city',
     name: 'Кирь',
-    type: 'place'
+    type: 'location'
   },
   {
     id: 'verden',
     name: 'Верден',
-    type: 'place'
+    type: 'location'
   },
   {
     id: 'westrock',
     name: 'Вестрок',
-    type: 'place'
+    type: 'location'
   },
   {
     id: 'orzammar',
     name: 'Орзаммар',
-    type: 'place'
+    type: 'location'
   },
   {
     id: 'orzammar_city',
     name: 'Орзаммар(город)',
-    type: 'place'
+    type: 'location'
   },
   {
     id: 'kindvar',
     name: 'Киндвар',
-    type: 'place'
+    type: 'location'
   },
   {
     id: 'windeheim',
     name: 'Виндхейм',
-    type: 'place'
+    type: 'location'
   },
   {
     id: 'edena',
     name: 'Эдена',
-    type: 'place'
+    type: 'location'
   },
   {
     id: 'dale',
     name: 'Дейл',
-    type: 'place'
+    type: 'location'
   },
-  // endregion
-  // region Fractions
+]
+
+export const FRACTIONS_TAGS: TagSM[] = [
   {
     id: 'kir_craft_guild',
     name: 'Ремесленная гильдия Кири',
@@ -180,12 +182,20 @@ const TAGS: TagSM[] = [
     name: 'Церковь Первородного Пламени',
     type: 'fraction'
   },
-  // endregion
-  // region Other
+]
+
+export const OTHER_TAGS: TagSM[] = [
   {
     id: 'cursed_mark',
     name: 'Метка'
   },
-  // endregion
+]
+
+const TAGS: TagSM[] = [
+  ...RACES_TAGS,
+  ...PROFICIENCIES_TAGS,
+  ...LOCATIONS_TAGS,
+  ...FRACTIONS_TAGS,
+  ...OTHER_TAGS,
 ]
 export default TAGS

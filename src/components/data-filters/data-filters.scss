@@ -1,0 +1,9 @@
+@use 'src/base-styles/functions';
+
+.page-search {
+  margin-bottom: functions.gap(3);
+
+  .ant-form-item {
+    margin-bottom: functions.gap(2);
+  }
+}

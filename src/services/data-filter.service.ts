@@ -9,6 +9,26 @@ export default class DataFilterService {
       result = this.filterContentByTags(result, filters.tags)
     }
 
+    if (filters?.races?.length) {
+      result = this.filterContentByTags(result, filters.races)
+    }
+
+    if (filters?.proficiencies?.length) {
+      result = this.filterContentByTags(result, filters.proficiencies)
+    }
+
+    if (filters?.locations?.length) {
+      result = this.filterContentByTags(result, filters.locations)
+    }
+
+    if (filters?.fractions?.length) {
+      result = this.filterContentByTags(result, filters.fractions)
+    }
+
+    if (filters?.otherTags?.length) {
+      result = this.filterContentByTags(result, filters.otherTags)
+    }
+
     if (filters?.qry) {
       result = this.filterContentByQuery(result, filters.qry.toLocaleLowerCase())
     }
