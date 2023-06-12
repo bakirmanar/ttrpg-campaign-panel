@@ -1,0 +1,18 @@
+@use 'src/base-styles/functions';
+
+.character-view {
+  padding: functions.gap(3);
+
+  .character-view-avatar {
+    margin-right: functions.gap(2);
+  }
+
+  .character-view-title {
+    margin-top: 0;
+    margin-bottom: functions.gap(1);
+  }
+
+  .character-view-tag {
+    margin: 0;
+  }
+}

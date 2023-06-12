@@ -3,6 +3,8 @@ import TagsService from '../../services/tags.service'
 import React, { useRef } from 'react'
 import Filters from '../../models/data-filter.model'
 
+import './data-filters.scss'
+
 type DataFiltersProps = {
   onChange: (filters: Filters) => void
   onReset: (filters: Filters) => void

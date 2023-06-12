@@ -1,11 +1,9 @@
 @use 'src/base-styles/functions';
 
 .content-section {
-  + & {
-    margin-top: functions.gap(4);
-  }
+  margin-bottom: functions.gap(4);
 
-  .ant-card-body > .ant-row + .ant-row {
+  .ant-card-body > .character-view + .character-view {
     border-top: 1px solid #f0f0f0;
   }
 }

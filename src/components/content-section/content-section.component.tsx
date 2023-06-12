@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card } from 'antd'
 import Title from 'antd/lib/typography/Title'
-import PC from '../pc/pc.component'
+import CharacterView from '../character-view/character-view.component'
 import { DataVM } from '../../models/data.model'
 
 import './content-section.scss';
@@ -18,7 +18,7 @@ export default function ContentSection({
   return (
     <Card className='content-section'>
       <Title level={3}>{title}</Title>
-      {data.map((pc) => <PC key={pc.id} pc={pc} />)}
+      {data.map((pc) => <CharacterView key={pc.id} data={pc} />)}
     </Card>
   )
 }
