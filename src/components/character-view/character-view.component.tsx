@@ -21,7 +21,7 @@ export default function CharacterView({data}: CharacterViewProps){
           {data.tags?.length
             ? <Space size={4} wrap={true}>
               {data.tags.map((tag) =>
-                <Tag className="character-view-tag" key={tag.id} color={tag.color} bordered={false}>{tag.name}</Tag>)
+                <Tag className='character-view-tag' key={tag.id} color={tag.color} bordered={false}>{tag.name}</Tag>)
               }
             </Space>
             : null
@@ -29,7 +29,7 @@ export default function CharacterView({data}: CharacterViewProps){
         </Col>
       </Row>
       <Row>
-        <Col>{data.description}</Col>
+        <Col className='character-view-description'>{data.description}</Col>
       </Row>
     </div>
   )

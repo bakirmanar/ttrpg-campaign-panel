@@ -26,7 +26,7 @@ const NPCS: CharacterDataModel[] = [
     race: 'dwarf',
     description: 'Продавец и изобретатель из Вестрока. Состоит в гильдии торговцев и ремесленников Вестрока.'
       + ' Был в Кири во время фестиваля.',
-    tags: ['dwarf', 'westrock', 'westrock_craft_guild']
+    tags: ['dwarf', 'artificer', 'westrock', 'westrock_craft_guild']
   },
   {
     id: 'chonk',
@@ -38,7 +38,7 @@ const NPCS: CharacterDataModel[] = [
   },
   {
     id: 'ralf',
-    name: 'Ральф',
+    name: 'Ралф',
     type: 'NPC',
     race: 'human',
     description: 'Хозяин таверны “Никак” в Виндхейме. C протезом. Был в сопротивлении.',
@@ -80,9 +80,9 @@ const NPCS: CharacterDataModel[] = [
   },
   {
     id: 'shchavli',
-    name: 'Щавли Четерыхлистный',
+    name: 'Щавли Четырёхлистный',
     type: 'NPC',
-    description: '',
+    description: 'Друид из сопротивления в Виндхейме. Помогал героям информацией.',
     tags: ['druid', 'kindvar', 'windeheim', 'windeheim_resistance', 'cursed_mark']
   },
   {
@@ -119,7 +119,7 @@ const NPCS: CharacterDataModel[] = [
     description: 'Придворный маг в замке Виндхейма. На самом деле именно он управлял почти всем в Киндваре.'
      + '\nИзучал метку. Думал, что метку можно снять с помощью жертвенного ритуала, пожертвовав больший объём душ.'
      + '\nБыл убит Лараисулом во время разведки в замке Виндхейма.',
-    tags: ['kindvar', 'windeheim', 'windeheim_castle', 'cursed_mark']
+    tags: ['mage', 'kindvar', 'windeheim', 'windeheim_castle', 'cursed_mark']
   },
   {
     id: 'silk',
@@ -234,7 +234,7 @@ const NPCS: CharacterDataModel[] = [
     name: 'Квазар Бо',
     type: 'NPC',
     race: 'half-orc',
-    description: 'Главарь банды Молотобойцы.',
+    description: 'Главарь банды Молотобойцы. Убит во время боя героев с Молотобойцами.',
     tags: ['half_orc', 'kir_city', 'hammerers']
   },
   {
@@ -249,7 +249,8 @@ const NPCS: CharacterDataModel[] = [
     name: 'Хавик',
     type: 'NPC',
     race: 'dwarf',
-    description: 'Кузнец в банде Молотобойцев. Помогает создавать големов. Был кузнецом в гильдии ремесленников Кири до взрыва.',
+    description: 'Кузнец в банде Молотобойцев. Помогал создавать големов. Бежал во время боя героев и Молотобойцев.'
+      + '\nБыл кузнецом в гильдии ремесленников Кири до взрыва.',
     tags: ['dwarf', 'blacksmith', 'kir_city', 'kir_craft_guild', 'hammerers']
   },
   {
@@ -257,8 +258,9 @@ const NPCS: CharacterDataModel[] = [
     name: 'Кирито',
     type: 'NPC',
     race: 'gnome',
-    description: 'Маг в банде Молотобойцев. Помогает создавать големов. Состоял в гильдии ремесленников Кири до взрыва.',
-    tags: ['gnome', 'kir_city', 'kir_craft_guild', 'hammerers']
+    description: 'Маг в банде Молотобойцев. Помогал создавать големов. Бежал во время боя героев и Молотобойцев.'
+      + '\nСостоял в гильдии ремесленников Кири до взрыва.',
+    tags: ['gnome', 'mage', 'kir_city', 'kir_craft_guild', 'hammerers']
   }
 ]
 

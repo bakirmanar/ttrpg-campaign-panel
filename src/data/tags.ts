@@ -96,6 +96,11 @@ export const PROFICIENCIES_TAGS: TagSM[] = [
     name: 'Паладин',
     type: 'proficiency'
   },
+  {
+    id: 'mage',
+    name: 'Маг',
+    type: 'proficiency'
+  },
 ]
 
 export const LOCATIONS_TAGS: TagSM[] = [
