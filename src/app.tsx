@@ -17,10 +17,12 @@ const router = createBrowserRouter([
       { path: '/fractions', Component: FractionsPage },
       { path: '/locations', Component: LocationsPage },
       { path: '/sessions', Component: SessionsPage },
-      { path: '*', Component: MainPage },
     ]
   },
-])
+  { path: '*', Component: MainPage }
+], {
+  basename: '/ttrpg-campaign-panel'
+})
 
 function App() {
   return (
