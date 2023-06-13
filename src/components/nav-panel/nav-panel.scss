@@ -1,0 +1,9 @@
+@use 'src/base-styles/functions';
+
+.nav-panel {
+  padding: functions.gap(2);
+
+  .active .ant-btn {
+    font-weight: 700;
+  }
+}

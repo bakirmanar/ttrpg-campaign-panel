@@ -3,6 +3,17 @@ import PCS from '../data/pcs'
 import { TagVM } from '../models/tag.model'
 import { DataBM, DataVM } from '../models/data.model'
 import TagsService from './tags.service'
+import SESSIONS from '../data/sessions'
+import FRACTIONS from '../data/fractions'
+import LOCATIONS from '../data/locations'
+
+type ContentBlocks = {
+  PCS: ContentBlock
+  NPCS: ContentBlock
+  FRACTIONS: ContentBlock
+  LOCATIONS: ContentBlock
+  SESSIONS: ContentBlock
+}
 
 export type ContentBlock = {
   key: string,
@@ -11,15 +22,12 @@ export type ContentBlock = {
 }
 
 export default class DataService {
-  private static readonly PCS: ContentBlock = {
-    key: 'pcs',
-    title: 'Главные персонажи',
-    data: this.dataBMToDataVM(PCS),
-  }
-  private static readonly NPCS: ContentBlock = {
-    key: 'npcs',
-    title: 'NPC',
-    data: this.dataBMToDataVM(NPCS),
+  private static readonly BLOCKS: ContentBlocks = {
+    PCS: { key: 'pcs', title: 'Главные персонажи', data: this.dataBMToDataVM(PCS) },
+    NPCS: { key: 'npcs', title: 'NPC', data: this.dataBMToDataVM(NPCS) },
+    FRACTIONS: { key: 'fractions', title: 'Фракции', data: this.dataBMToDataVM(FRACTIONS) },
+    LOCATIONS: { key: 'locations', title: 'Локации', data: this.dataBMToDataVM(LOCATIONS) },
+    SESSIONS: { key: 'sessions', title: 'Сессии', data: this.dataBMToDataVM(SESSIONS) },
   }
 
   private static dataBMToDataVM(data: DataBM[]): DataVM[] {
@@ -37,26 +45,11 @@ export default class DataService {
     })
   }
 
-  public static getAllBlocks() {
-    return [
-      this.PCS,
-      this.NPCS,
-    ]
-  }
-
-  public static filterBlocksByQuery(qry: string) {
-    return this.getAllBlocks()
-      .map((block) => this.filterSingleBlockByQuery(block, qry))
-  }
-
-  private static filterSingleBlockByQuery(block: ContentBlock, qry: string): ContentBlock {
-    return {
-      key: block.key,
-      title: block.title,
-      data: block.data.filter((data) =>
-        data.name?.toLocaleLowerCase().includes(qry)
-          || data.description?.toLocaleLowerCase().includes(qry)
-      )
-    }
+  public static getBlocks(keys: Array<keyof ContentBlocks> = []): ContentBlock[] {
+    const result: ContentBlock[] = []
+    keys.forEach((blockKey) => {
+      result.push(this.BLOCKS[blockKey])
+    })
+    return result
   }
 }
