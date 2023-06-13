@@ -1,5 +1,9 @@
 @use 'src/base-styles/functions';
 
+.theme-switch {
+  margin: functions.gaps(4, 4, 2);
+}
+
 .nav-panel {
   padding: functions.gap(2);
 
