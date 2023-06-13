@@ -9,8 +9,8 @@ import './root.scss'
 
 const Root = () => {
   return (
-    <Layout className="app">
-      <Sider className="app-sider" breakpoint="lg" collapsedWidth="0">
+    <Layout className="app" hasSider={true}>
+      <Sider className="app-sider" breakpoint="lg" collapsedWidth="0" >
         <NavPanel />
       </Sider>
       <Content className="app-content">

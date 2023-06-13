@@ -9,7 +9,8 @@
     bottom: 0;
     left: 0;
     height: 100vh;
-    background: transparent;
+    background: none;
+    z-index: 1;
   }
 
   .app-content {
@@ -17,6 +18,23 @@
 
     > .content-section + .content-section {
       margin-top: functions.gap(3);
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .app {
+    .app-sider {
+      position: fixed;
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .ant-layout-sider-zero-width-trigger {
+      top: 0
+    }
+
+    .app-content {
+      margin-top: 40px;
     }
   }
 }
