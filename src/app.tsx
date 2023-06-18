@@ -6,6 +6,7 @@ import CharactersPage from './pages/characters/characters.page'
 import SessionsPage from './pages/sessions/sessions.page'
 import FractionsPage from './pages/fractions/fractions.page'
 import LocationsPage from './pages/locations/locations.page'
+import MapPage from './pages/map/map.page'
 
 const router = createHashRouter([
   {
@@ -17,6 +18,7 @@ const router = createHashRouter([
       { path: '/fractions', Component: FractionsPage },
       { path: '/locations', Component: LocationsPage },
       { path: '/sessions', Component: SessionsPage },
+      { path: '/map', Component: MapPage },
       { path: '*', Component: MainPage },
     ]
   },

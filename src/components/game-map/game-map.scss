@@ -1,0 +1,54 @@
+.game-map-container {
+  position: relative;
+}
+
+.game-map-background {
+  position: absolute;
+  inset: 0;
+
+  background-color: #002B4D;
+
+
+  &-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../../assets/images/wave.svg') repeat 0 0 / 100px auto;
+
+    &.reverse {
+      background-position: 25px 50px;
+      transform: scaleX(-1);
+    }
+  }
+}
+
+#map-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.game-map,
+#map-svg {
+  overflow: visible;
+  position: relative;
+}
+
+
+.game-map-zone {
+  position: relative;
+  transform-origin: 319px 171px;
+  .game-map-zone-body {
+    transform-origin: 319px 171px;
+    transition: transform 0.5s;
+  }
+
+  &:hover {
+    stroke: #000;
+  }
+
+  &:hover .game-map-zone-body {
+    transform: scale(1.05);
+  }
+}
