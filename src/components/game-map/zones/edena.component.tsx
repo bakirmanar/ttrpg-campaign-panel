@@ -12,10 +12,10 @@ import DeadTree3 from '../figures/dead-tree-3.component'
 const EdenaMap = () => {
   return (
     <g id="edena-zone" className="game-map-zone" transform="translate(50, 211)">
-      <clipPath id="edena-clip">
-        <path d={PATHS.EDENA}/>
-      </clipPath>
       <g className="game-map-zone-body">
+        <clipPath id="edena-clip">
+          <path d={PATHS.EDENA}/>
+        </clipPath>
         <path className="game-map-zone-path" d={PATHS.EDENA} fill={COLORS.DESERT}/>
 
         <g clipPath="url(#edena-clip)">

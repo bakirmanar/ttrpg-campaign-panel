@@ -12,10 +12,10 @@ import DeadTree3 from '../figures/dead-tree-3.component'
 const VerdenMap = () => {
   return (
     <g id="verden-zone" className="game-map-zone" transform="translate(89, 143)">
-      <clipPath id="verden-clip">
-        <path d={PATHS.VERDEN} />
-      </clipPath>
       <g className="game-map-zone-body">
+        <clipPath id="verden-clip">
+          <path d={PATHS.VERDEN} />
+        </clipPath>
         <path className="game-map-zone-path" d={PATHS.VERDEN} fill={COLORS.TEMPERATE} />
 
         <g clipPath="url(#verden-clip)">

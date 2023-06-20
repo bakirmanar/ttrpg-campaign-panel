@@ -8,10 +8,10 @@ import DeadTree1 from '../figures/dead-tree-1.component'
 const OrangeDesertMap = () => {
   return (
     <g id="orange-desert-zone" className="game-map-zone" transform="translate(0, 281)">
-      <clipPath id="orange-desert-clip">
-        <path d={PATHS.ORANGE_DESERT} />
-      </clipPath>
       <g className="game-map-zone-body">
+        <clipPath id="orange-desert-clip">
+          <path d={PATHS.ORANGE_DESERT} />
+        </clipPath>
         <path className="game-map-zone-path" d={PATHS.ORANGE_DESERT} fill={COLORS.ORANGE_DESERT} />
 
         <g clipPath="url(#orange-desert-clip)">
@@ -20,12 +20,12 @@ const OrangeDesertMap = () => {
           <path d={PATHS.ORANGE_DESERT_SHORE_2} stroke="#000" strokeOpacity="0.2" strokeWidth="20" />
           <path d={PATHS.ORANGE_DESERT_SHORE_2} stroke="#000" strokeOpacity="0.2" strokeWidth="10" />
         </g>
-      </g>
 
-      <DeadTree1 x="88" y="11" />
-      <Mountain3 color={COLORS.ORANGE_DESERT} x="87" y="18" />
-      <Mountain2 color={COLORS.ORANGE_DESERT} x="71" y="35" />
-      <Mountain1 color={COLORS.ORANGE_DESERT} x="41" y="50" />
+        <DeadTree1 x="88" y="11" />
+        <Mountain3 color={COLORS.ORANGE_DESERT} x="87" y="18" />
+        <Mountain2 color={COLORS.ORANGE_DESERT} x="71" y="35" />
+        <Mountain1 color={COLORS.ORANGE_DESERT} x="41" y="50" />
+      </g>
     </g>
   )
 }

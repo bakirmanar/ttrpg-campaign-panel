@@ -7,10 +7,10 @@ import DeadTree1 from '../figures/dead-tree-1.component'
 const OrzammarMap = () => {
   return (
     <g id="orzammar-zone" className="game-map-zone" transform="translate(321, 118)">
-      <clipPath id="orzammar-clip">
-        <path d={PATHS.ORZAMMAR} />
-      </clipPath>
       <g className="game-map-zone-body">
+        <clipPath id="orzammar-clip">
+          <path d={PATHS.ORZAMMAR} />
+        </clipPath>
         <path className="game-map-zone-path" d={PATHS.ORZAMMAR} fill={COLORS.TEMPERATE} />
 
         <g clipPath="url(#orzammar-clip)">

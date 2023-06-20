@@ -15,26 +15,34 @@ const GameMap = React.memo(() => {
     const svg = d3.select('#map-svg')
     const gameZones = svg.selectAll('.game-map-zone')
 
+    gameZones.selectAll('.game-map-zone-body')
+      .attr('transform', 'scale(1)')
+
     gameZones.on('mouseover', (event) => {
-      const hoveredZone: HTMLElement = event.currentTarget
+      const target: HTMLElement = event.currentTarget
+      const d3Target = d3.select(target)
+      const d3TargetBody = d3Target.select('.game-map-zone-body')
 
       // Put element at the end of DOM structure to overlap the rest of elements
-      d3.select(hoveredZone).raise()
+      d3Target.raise()
+      // Scale size of a target
+      d3TargetBody
+        .transition()
+        .attr('transform', 'scale(1.1)')
 
-      // Reorder elements back
-      const reorder = () => {
-        gameZones
-          .filter((gz, i, arr) => arr[i] !== hoveredZone)
-          .order()
+      const cleanEffects = () => {
+        // Return size of a target
+        d3TargetBody
+          .transition()
+          .attr('transform', 'scale(1)')
 
-        hoveredZone.removeEventListener('mouseleave', reorder)
+        // Reorder elements back
+        gameZones.order()
+
+        target.removeEventListener('mouseleave', cleanEffects)
       }
 
-      hoveredZone.addEventListener('mouseleave', reorder)
-    })
-
-    gameZones.on('mouseleave', (event) => {
-      gameZones.order()
+      target.addEventListener('mouseleave', cleanEffects)
     })
   }, [])
 

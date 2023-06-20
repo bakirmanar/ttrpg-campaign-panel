@@ -4,10 +4,10 @@ import { COLORS, PATHS } from '../game-map.variables'
 const MizinecMap = () => {
   return (
     <g id="mizinec-zone" className="game-map-zone" transform="translate(438, 27)">
-      <clipPath id="mizinec-clip">
-        <path d={PATHS.MIZINEC} />
-      </clipPath>
       <g className="game-map-zone-body">
+        <clipPath id="mizinec-clip">
+          <path d={PATHS.MIZINEC} />
+        </clipPath>
         <path className="game-map-zone-path" d={PATHS.MIZINEC} fill={COLORS.WINTER} />
 
         <g clipPath="url(#mizinec-clip)">
