@@ -1,9 +1,13 @@
 import React from 'react'
 import { COLORS, PATHS } from '../game-map.variables'
+import { GameMapObject } from '../game-map.models'
 
-const MizinecMap = () => {
+const MizinecMap = ({
+  x,
+  y,
+}: GameMapObject) => {
   return (
-    <g id="mizinec-zone" className="game-map-zone" transform="translate(438, 27)">
+    <g id="mizinec-zone" className="game-map-zone" transform={`translate(${x}, ${y})`}>
       <g className="game-map-zone-body">
         <clipPath id="mizinec-clip">
           <path d={PATHS.MIZINEC} />

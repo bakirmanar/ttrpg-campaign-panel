@@ -9,6 +9,7 @@ import EdenaMap from './zones/edena.component'
 import OrangeDesertMap from './zones/orange-desert.component'
 
 import './game-map.scss'
+import { MAP_HEIGHT, MAP_WIDTH } from './game-map.variables'
 
 const GameMap = React.memo(() => {
   useLayoutEffect(() => {
@@ -17,6 +18,15 @@ const GameMap = React.memo(() => {
 
     gameZones.selectAll('.game-map-zone-body')
       .attr('transform', 'scale(1)')
+
+    const zoom = d3.zoom()
+      .scaleExtent([0.8, 2])
+      .translateExtent([[0, 0], [MAP_WIDTH, MAP_HEIGHT]])
+      .on('zoom', (e: any) => {
+        svg.attr('transform', e.transform)
+      })
+
+    svg.call(zoom as any)
 
     gameZones.on('mouseover', (event) => {
       const target: HTMLElement = event.currentTarget
@@ -52,15 +62,15 @@ const GameMap = React.memo(() => {
         <div className="game-map-background-layer" />
         <div className="game-map-background-layer reverse" />
       </div>
-      <svg id="map-svg" viewBox="0 0 638 369" fill="none">
+      <svg id="map-svg" viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`} fill="none">
         <g className="game-map">
-          <KindvarMap />
-          <MizinecMap />
-          <OrzammarMap />
-          <KirMap />
-          <VerdenMap />
-          <EdenaMap />
-          <OrangeDesertMap />
+          <KindvarMap x="87" y="36" />
+          <MizinecMap x="438" y="27" />
+          <OrzammarMap x="321" y="118" />
+          <KirMap x="209" y="131" />
+          <VerdenMap x="89" y="143" />
+          <EdenaMap x="50" y="211" />
+          <OrangeDesertMap x="0" y="281" />
         </g>
       </svg>
     </div>

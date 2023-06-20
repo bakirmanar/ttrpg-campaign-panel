@@ -1,4 +1,4 @@
-export type GameMapFigure = {
+export type GameMapObject = {
   x: string
   y: string
   color?: string

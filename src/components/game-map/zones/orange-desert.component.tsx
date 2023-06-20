@@ -1,13 +1,17 @@
 import React from 'react'
 import { COLORS, PATHS } from '../game-map.variables'
+import { GameMapObject } from '../game-map.models'
 import Mountain1 from '../figures/mountain-1.component'
 import Mountain3 from '../figures/mountain-3.component'
 import Mountain2 from '../figures/mountain-2.component'
 import DeadTree1 from '../figures/dead-tree-1.component'
 
-const OrangeDesertMap = () => {
+const OrangeDesertMap = ({
+  x,
+  y,
+}: GameMapObject) => {
   return (
-    <g id="orange-desert-zone" className="game-map-zone" transform="translate(0, 281)">
+    <g id="orange-desert-zone" className="game-map-zone" transform={`translate(${x}, ${y})`}>
       <g className="game-map-zone-body">
         <clipPath id="orange-desert-clip">
           <path d={PATHS.ORANGE_DESERT} />

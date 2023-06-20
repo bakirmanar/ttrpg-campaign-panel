@@ -1,5 +1,5 @@
 import React from 'react'
-import { GameMapFigure } from '../game-map.models'
+import { GameMapObject } from '../game-map.models'
 import { COLORS } from '../game-map.variables'
 
 const MOUNTAIN_SHAPE_PATH = 'M35.5 1C24.3 11.4 7.66667 22 1 25L21 30L61 25C54.5 25.5 40 6 35.5 1Z'
@@ -10,7 +10,7 @@ const Mountain1 = ({
   color,
   x,
   y,
-}: GameMapFigure) => {
+}: GameMapObject) => {
   return (
     <g transform={`translate(${x}, ${y})`}>
       <path d={MOUNTAIN_SHAPE_PATH} fill={color} />

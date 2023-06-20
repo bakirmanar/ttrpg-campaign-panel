@@ -1,12 +1,16 @@
 import React from 'react'
 import { COLORS, PATHS } from '../game-map.variables'
+import { GameMapObject } from '../game-map.models'
 import DeadTree2 from '../figures/dead-tree-2.component'
 import DeadTree3 from '../figures/dead-tree-3.component'
 import DeadTree1 from '../figures/dead-tree-1.component'
 
-const OrzammarMap = () => {
+const OrzammarMap = ({
+  x,
+  y,
+}: GameMapObject) => {
   return (
-    <g id="orzammar-zone" className="game-map-zone" transform="translate(321, 118)">
+    <g id="orzammar-zone" className="game-map-zone" transform={`translate(${x}, ${y})`}>
       <g className="game-map-zone-body">
         <clipPath id="orzammar-clip">
           <path d={PATHS.ORZAMMAR} />

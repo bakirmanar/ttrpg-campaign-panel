@@ -1,12 +1,12 @@
 import React from 'react'
-import { GameMapFigure } from '../game-map.models'
+import { GameMapObject } from '../game-map.models'
 import { COLORS } from '../game-map.variables'
 
 const Mountain3 = ({
   color,
   x,
   y,
-}: GameMapFigure) => {
+}: GameMapObject) => {
   return (
     <g transform={`translate(${x}, ${y})`}>
       <path fill={color}
