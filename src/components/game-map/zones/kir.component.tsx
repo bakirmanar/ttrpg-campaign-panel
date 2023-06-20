@@ -5,7 +5,7 @@ const KirMap = () => {
   return (
     <g id="kir-zone" className="game-map-zone" transform="translate(209, 131)">
       <g className="game-map-zone-body">
-        <path d={PATHS.KIR} fill={COLORS.TEMPERATE} />
+        <path className="game-map-zone-path" d={PATHS.KIR} fill={COLORS.TEMPERATE} />
       </g>
     </g>
   )

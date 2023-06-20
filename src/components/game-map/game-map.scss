@@ -35,20 +35,6 @@
   position: relative;
 }
 
-
-.game-map-zone {
-  position: relative;
-  transform-origin: 319px 171px;
-  .game-map-zone-body {
-    transform-origin: 319px 171px;
-    transition: transform 0.5s;
-  }
-
-  &:hover {
-    stroke: #000;
-  }
-
-  &:hover .game-map-zone-body {
-    transform: scale(1.05);
-  }
+.game-map-zone:hover .game-map-zone-path {
+  stroke: #000;
 }

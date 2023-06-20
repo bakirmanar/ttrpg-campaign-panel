@@ -1,23 +1,41 @@
 import React, { useLayoutEffect } from 'react'
 import * as d3 from 'd3'
-import KindvarMap from './parts/kindvar.component'
-import MizinecMap from './parts/mizinec.component'
-import KirMap from './parts/kir.component'
-import VerdenMap from './parts/verden.component'
-import OrzammarMap from './parts/orzammar.component'
-import EdenaMap from './parts/edena.component'
-import OrangeDesertMap from './parts/orange-desert.component'
+import KindvarMap from './zones/kindvar.component'
+import MizinecMap from './zones/mizinec.component'
+import KirMap from './zones/kir.component'
+import VerdenMap from './zones/verden.component'
+import OrzammarMap from './zones/orzammar.component'
+import EdenaMap from './zones/edena.component'
+import OrangeDesertMap from './zones/orange-desert.component'
 
 import './game-map.scss'
 
 const GameMap = React.memo(() => {
   useLayoutEffect(() => {
     const svg = d3.select('#map-svg')
+    const gameZones = svg.selectAll('.game-map-zone')
 
-    svg.selectAll('.game-map-zone')
-      .on('mouseover', (event) => {
-        d3.select(event.currentTarget).raise()
-      })
+    gameZones.on('mouseover', (event) => {
+      const hoveredZone: HTMLElement = event.currentTarget
+
+      // Put element at the end of DOM structure to overlap the rest of elements
+      d3.select(hoveredZone).raise()
+
+      // Reorder elements back
+      const reorder = () => {
+        gameZones
+          .filter((gz, i, arr) => arr[i] !== hoveredZone)
+          .order()
+
+        hoveredZone.removeEventListener('mouseleave', reorder)
+      }
+
+      hoveredZone.addEventListener('mouseleave', reorder)
+    })
+
+    gameZones.on('mouseleave', (event) => {
+      gameZones.order()
+    })
   }, [])
 
   return (
@@ -30,9 +48,9 @@ const GameMap = React.memo(() => {
         <g className="game-map">
           <KindvarMap />
           <MizinecMap />
+          <OrzammarMap />
           <KirMap />
           <VerdenMap />
-          <OrzammarMap />
           <EdenaMap />
           <OrangeDesertMap />
         </g>
