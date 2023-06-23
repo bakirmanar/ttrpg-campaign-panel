@@ -9,6 +9,7 @@ import GreenTree3 from '../figures/green-tree-3.component'
 import DeadTree1 from '../figures/dead-tree-1.component'
 import DeadTree2 from '../figures/dead-tree-2.component'
 import DeadTree3 from '../figures/dead-tree-3.component'
+import Town1 from '../figures/town-1.component'
 
 const EdenaMap = ({
   x,
@@ -61,6 +62,13 @@ const EdenaMap = ({
         {/*Green forest*/}
         <GreenTree3 x="158" y="21" />
         <GreenTree1 x="162" y="34" />
+
+        {/*Road to Kir*/}
+        <path transform="translate(216, 1)"
+              d="M8 29C8 28.3333 8 26.5 8 24.5C8 22 8 20.5 5 16.5C2 12.5 2 8.5 2.5 2.5C2.56419 1.72972 2.55421 0.9512 2.487 0.169729"
+              stroke="black" strokeWidth="3" strokeDasharray="4"/>
+
+        <Town1 x="198" y="37" />
       </g>
     </g>
   )

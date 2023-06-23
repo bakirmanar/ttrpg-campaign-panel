@@ -9,6 +9,7 @@ import GreenTree2 from '../figures/green-tree-2.component'
 import DeadTree2 from '../figures/dead-tree-2.component'
 import DeadTree1 from '../figures/dead-tree-1.component'
 import DeadTree3 from '../figures/dead-tree-3.component'
+import Town3 from '../figures/town-3.component'
 
 const VerdenMap = ({
   x,
@@ -54,6 +55,13 @@ const VerdenMap = ({
         {/*Green forest bottom*/}
         <GreenTree1 x="112" y="88" />
         <GreenTree2 x="101" y="94" />
+
+        {/*Path to Kir*/}
+        <path transform="translate(74, 65.5)"
+          d="M0.5 8.52083C6 8.35417 19.7 8.52083 30.5 10.5208C43 14.5208 54.5 8.02083 63.5 5.02083C65.7288 4.29976 69.0817 3.31054 72.7191 2.39999"
+          stroke="black" strokeWidth="3" strokeDasharray="4"/>
+
+        <Town3 x="57" y="51"/>
       </g>
     </g>
   )
