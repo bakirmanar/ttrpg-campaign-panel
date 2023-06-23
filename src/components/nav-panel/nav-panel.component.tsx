@@ -28,10 +28,10 @@ const LINKS = [
     label: 'Сессии',
     route: '/sessions'
   },
-  {
-    label: 'Карта',
-    route: '/map'
-  }
+  // {
+  //   label: 'Карта',
+  //   route: '/map'
+  // }
 ]
 
 const NavPanel = () => {

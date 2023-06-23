@@ -1,5 +1,11 @@
+@use 'src/base-styles/functions';
+
 .game-map-container {
+  $container-gap: functions.gap(4);
   position: relative;
+  margin: $container-gap;
+  height: calc(100vh - #{$container-gap*4});
+  overflow: hidden;
 }
 
 .game-map-background {
@@ -26,7 +32,9 @@
 #map-svg {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
+  max-height: 100%;
 }
 
 .game-map,
